@@ -26,7 +26,7 @@
             display: block;
             margin-top: 10px;
             text-align: center;
-            color: #16487c;
+            color: #497bb0;
             font-weight: bold;
         }
     </style>
@@ -45,16 +45,15 @@
         fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
             .then(response => response.json())
             .then(user => {
-                let detailsHTML = `
-                    <p>ID: ${user.id}</p>
-                    <p>Name: ${user.name}</p>
-                    <p>Username: ${user.username}</p>
-                    <p>Email: ${user.email}</p>
-                    <p>Address: ${user.address.street}, ${user.address.suite}, ${user.address.city}, ${user.address.zipcode}</p>
-                    <p>Phone: ${user.phone}</p>
-                    <p>Website: ${user.website}</p>
-                    <p>Company: ${user.company.name} - ${user.company.catchPhrase} - ${user.company.bs}</p>`;
-                userDetails.innerHTML = detailsHTML;
+                userDetails.innerHTML = `
+                        <p>ID: ${user.id}</p>
+                        <p>Name: ${user.name}</p>
+                        <p>Username: ${user.username}</p>
+                        <p>Email: ${user.email}</p>
+                        <p>Address: ${user.address.street}, ${user.address.suite}, ${user.address.city}, ${user.address.zipcode}</p>
+                        <p>Phone: ${user.phone}</p>
+                        <p>Website: ${user.website}</p>
+                        <p>Company: ${user.company.name} - ${user.company.catchPhrase} - ${user.company.bs}</p>`;
             })
             .catch(error => console.error('Error', error));
 

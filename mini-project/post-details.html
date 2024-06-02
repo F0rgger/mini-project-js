@@ -20,7 +20,7 @@
         }
         .comment {
             flex: 1 1 calc(25% - 10px);
-            border: 1px solid #eab9b9;
+            border: 1px solid #d9aeae;
             padding: 10px;
         }
     </style>
@@ -38,11 +38,10 @@
         fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
             .then(response => response.json())
             .then(post => {
-                let detailsHTML = `
+                postDetails.innerHTML = `
                     <p>ID: ${post.id}</p>
                     <p>Title: ${post.title}</p>
                     <p>Body: ${post.body}</p>`;
-                postDetails.innerHTML = detailsHTML;
 
 
                 return fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`);
